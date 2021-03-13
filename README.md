@@ -1,1 +1,9 @@
 # Group6-FinalProject
+# NBA Crystal Ball 
+For our final project we decided to use NBA data from https://www.basketball-reference.com/ to predict which teams will make the playoffs, which team will win the championship, as well as who will win the MVP and rookie of the year awards. To make our predictions we leveraged SK learn and regressions to predict future outcomes based on historical data. The most challenging aspect of our project was collecting all of the data. We needed a large amount of data to leverage SK learn so we needed to manually export several csv files from nba referece both for indivual player stats and team stats. 
+
+When predicting which teams would make the playoffs, we looked at adjusted margin of victory, adjusted offensive rating, adjusted defenseive rating, and adjusted net rating. Being an adjusted number simply means that the level of competition was taken into consideration. We trained out data model using these stats and 10 years of previous nba team data to determine how those four stats impacted total wins. We then took the current year to date performance of teams and predicted how many wins they would end up with based on those stats. 
+
+For prediciting MVP and rookie of the year we took the same approach we did for predicting playoff teams, but leveraged individual player stats. We took historical player data for several years and trained our historical data on a set of invidiaul stats to see how impactful those were on winning either award. We then used sk learn to predict which players were having mvp or roy seasons (a binary 1 or 0. 1 meaning yes they would qualify as an MVP or ROY season and 0 meaning no their season does not qualify), as well as give a % chance to win the award based on their year to date season performance. 
+
+Check out our github pages for our graphics and more analysis. 
