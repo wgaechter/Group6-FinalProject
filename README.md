@@ -6,4 +6,6 @@ When predicting which teams would make the playoffs, we looked at adjusted margi
 
 For predicting MVP and ROY, we took the same approach we did for predicting playoff teams, but leveraging individual player statistics. We took historical player data for several years and trained our historical data on a set of individual statistics to see how impactful those were on winning either award. We then used SK learn to predict which players were having MVP or ROY seasons (a binary 1 or 0. 1 meaning 'yes' they would qualify as an MVP or ROY season and 0 meaning 'no' their season does not qualify), as well as their percent chance to win the award based on their year-to-date season performance. 
 
-Check out our github pages for our graphics and more analysis. 
+Check out our github pages and Tableau Public Story for our graphics and more analysis. 
+
+https://public.tableau.com/profile/jennifer.powell8088#!/vizhome/JenniferProject3/PredictingNBAStatisticsforthe2020-21Season?publish=yes
