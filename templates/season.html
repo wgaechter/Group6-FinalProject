@@ -28,13 +28,13 @@
         margin-left: 20%;
         margin-right: 20%;
         padding-top: 30px;
-        padding: 10px;
+        padding: 30px;
     }
 
     #ArticleImage {
         width: 100%;
         padding-top: 2px;
-        padding-bottom: 2px;
+        padding-bottom: 20px;
         align-content: center;
         padding-left: 10px;
         padding-right: 10px;
@@ -48,22 +48,40 @@
         padding-right: 15px;
         border-style: inset;
         border-color: #BF5700;
+        border-radius: 5px;
         border-width: 5px;
     }
 
     h1 {
+        font-weight: bold;
+        font-size: 30px;
         width: 100%;
     }
 
     h2 {
+        font-style: italic;
+        font-size: 16px;
         width: 100%;
     }
 
     p {
+        font-size: 14px;
         width: 100%;
         text-align: left;
     }
 
+    dt {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+ 
 </style>
 
 <header>
@@ -106,22 +124,39 @@
         <img class=header src="../static/pics/2021_header.jpeg">
     </div>
     <div id="ArticleContainer" class=container>
-        <h1>Season Predictions</h1>
+        <h1>2021 Season Predictions</h1>
         <p>Multiple Linear Regression</p>
         <h2>Main Idea</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa. Libero volutpat sed cras ornare arcu dui. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Velit sed ullamcorper morbi tincidunt ornare massa. Id donec ultrices tincidunt arcu non sodales neque sodales ut. Sed faucibus turpis in eu mi bibendum neque egestas congue. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. In pellentesque massa placerat duis ultricies lacus. Massa sapien faucibus et molestie ac feugiat. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Dictum varius duis at consectetur lorem donec massa sapien.</p>
+        <p>Utilizing Multiple linear Regression models, we set out to attempt to predict the final outcome of the 2021 using current team statistics from the halfway point in the 2021 NBA Season.</p>
+        <h1>Data</h1>
+        <h2>Source</h2>
+        <p>Data was collected from https://www.basketball-reference.com.  Using their "Team Ratings" tables we could use these metrics to help determine team skill and their impacts on win counts</p>
+        <dl>
+            <dt>Adjusted Margin of Victory (MOV/A)</dt>
+            <dd>Average difference between team points scored and team points allowed, adjusted for strength of schedule</dd>
+            <dt>Adjusted Offensive Rating (ORtg/A)</dt>
+            <dd>An estimate of points scored per 100 possessions, adjusted for strength of schedule</dd>
+            <dt>Adjusted Defensive Rating (DRtg/A)</dt>
+            <dd>An estimate of points allowed per 100 possessions, adjusted for strength of schedule</dd>
+            <dt>Adjusted Net Rating (NRtg/A)</dt>
+            <dd>A net aggregate of a teams ORtg/A and DRtg/A</dd>
+        </dl>
+        <p>The adjusted metrics were used as we felt it better reflected a teams's true points value, and would help create a more accurate prediction based on a teams conference or division</p>
+        <img id="ArticleImage" src="../static/pics/SeasonPredictions/ratings.PNG">
         <h2>Training Data</h2>
-        <p>explain</p>
-        <img id="ArticleImage" src="../static/pics/SeasonPredictions/p-score.PNG">
-        <h2>etc</h2>
-        <p>TEST TEST TEST</p>
+        <p>Data from the 2000 NBA season to the 2020 NBA season were collected and combined for model training.  Our process included using past seasons metric ratings and the corresponding wins to train the model to help accuratly predict wins from 2021's current metrics</p>
         <pre>
             <code class="language-python">
-                predictions = model.predict(X_21)
-                print(f"First 32 Predictions:   {predictions[:32]}")
-                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
+                X = data[["MOV/A", "ORtg/A", "DRtg/A", "NRtg/A"]]
+                y = data["W"].values.reshape(-1,1)
             </code>
         </pre>
+        <p>Multiple Regression models allow us to track the linear path of multiple X values, in this case our four main ranking metrics provided by https://www.basketball-reference.com.  Our Y output would be trained by past seasons total wins, and would be the predictive variable when inputing 2021 data.</p>
+        <p>Using Scikit-Learns' internal scoring methods, our training data returned a P-Value of .910 along with a testing score of .908.  These scores demonstrate a strong correlation between our metrics and wins.  This means our possible predictions should statisically be accurate.</p>
+        <h1>Predictions</h1>
+
+        <h1>Analysis</h1>
+        
     </div>
 </body>
 
