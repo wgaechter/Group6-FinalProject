@@ -81,6 +81,38 @@
         width: 100%;
         text-align: left;
     }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
  
 </style>
 
@@ -303,14 +335,23 @@
         <h1>Analysis</h1>
         <p>Until the season concludes, we wont know for sure just how accurate we are; However, with near 1 R-Squared values we can trust this regression in a statistical manner to continue our predictions into the playoffs.</p>
         <p>An Interesting perspective the regression shows is the change in standings from the halfway point in the season to the predicted finals.  The metrics used did infact show some teams may have been playing better than their win/loss numbers have so far shown, as well as the inverse.</p>
-        <img id="ArticleImage" src="../static/pics/SeasonPredictions/now_to_predicted.png">
+        <div class='tableauPlaceholder' id='viz1615759210585' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;CurrenttoPredictedWins' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615759210585');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <p>We can see teams such as the Milwaukee Bucks who sit with 21 current wins, good enough for 7th overall currently, are predicted to finish with the second most wins by the end of the season along with the regular season Eastern Conference Title.</p>
         <p>On the opposite end, the Portland Trailblazers with a respectable 18 wins, sitting 11th place overall, have been predicted to fall all the way to 20th in the overall standings with only 35 wins.</p>
         <h2>Playoff Implications</h2>
         <p>The top eight teams from each conference are awarded bids to the NBA playoffs, using our predictions we can create our predictive bracket and seed the teams based on record.  We go in-depth into the playoff predictions in the next section.</p>
         <div class='tableauPlaceholder' id='viz1615758615039' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;HYQKYNZQ8' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615758615039');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div id="nextlink">
+            <a href="playoffs.html">Click Here for our Playoff Predictions</a>
+        </div>
     </div>
 </body>
+
+<footer>
+    <div id="footerLink">
+        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+    </div>
+</footer>
 
 
 <script src="../static/js/bootstrap.bundle.min.js"></script>
