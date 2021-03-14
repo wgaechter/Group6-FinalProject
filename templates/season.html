@@ -145,18 +145,165 @@
         <img id="ArticleImage" src="../static/pics/SeasonPredictions/ratings.PNG">
         <h2>Training Data</h2>
         <p>Data from the 2000 NBA season to the 2020 NBA season were collected and combined for model training.  Our process included using past seasons metric ratings and the corresponding wins to train the model to help accuratly predict wins from 2021's current metrics</p>
-        <pre>
+        <!-- <pre>
             <code class="language-python">
                 X = data[["MOV/A", "ORtg/A", "DRtg/A", "NRtg/A"]]
                 y = data["W"].values.reshape(-1,1)
             </code>
-        </pre>
+        </pre> -->
+        <script src="https://gist.github.com/wgaechter/4fbd47cfc86dec2c113befdc2aa87d8a.js"></script>        <img id="ArticleImage" src="../static/pics/SeasonPredictions/ResidualPlot.png">
         <p>Multiple Regression models allow us to track the linear path of multiple X values, in this case our four main ranking metrics provided by https://www.basketball-reference.com.  Our Y output would be trained by past seasons total wins, and would be the predictive variable when inputing 2021 data.</p>
         <p>Using Scikit-Learns' internal scoring methods, our training data returned a P-Value of .910 along with a testing score of .908.  These scores demonstrate a strong correlation between our metrics and wins.  This means our possible predictions should statisically be accurate.</p>
+        
         <h1>Predictions</h1>
+        <p>Utilizing Scikits prediction tools, we could use our current 2021 Data and plug the information into our trained linear regression model to receive a predicted final standings for the 2021 season</p>
+        <!-- <pre>
+            <code class="language-python">
+                predictions = model.predict(X_21)
+                print(f"First 32 Predictions:   {predictions[:32]}")
+                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
+
+                pred = [x[0] for x in predictions]
+                preds = pd.Series(pred)
+                predictions_df = pd.concat([teams, preds],axis =1)
+                predictions_df.rename(columns = {0: "Predicted Wins"}, inplace=True)
+                predictions_df["Predicted Wins"] = predictions_df["Predicted Wins"].astype(int)
+                predictions_df.to_csv("Data/predicted_wins_rounded.csv")
+            </code>
+        </pre> -->
+        <script src="https://gist.github.com/wgaechter/a69ec19262b591f1ad04ac4a82ca574f.js"></script>
+        <p>the raw predictions were listed and sorted into predictions_df, which was then formatted into a digestable table to see exactly how many wins were given to each team.</p>
+        <table class="table table-bordered table-hover table-condensed">
+            <tbody><tr>
+            <td>Team</td>
+            <td>Predicted Wins</td>
+            </tr>
+            <tr>
+            <td>Utah Jazz</td>
+            <td>67</td>
+            </tr>
+            <tr>
+            <td>Milwaukee Bucks</td>
+            <td>58</td>
+            </tr>
+            <tr>
+            <td>Phoenix Suns</td>
+            <td>55</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Clippers</td>
+            <td>54</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Lakers</td>
+            <td>53</td>
+            </tr>
+            <tr>
+            <td>Brooklyn Nets</td>
+            <td>50</td>
+            </tr>
+            <tr>
+            <td>Denver Nuggets</td>
+            <td>50</td>
+            </tr>
+            <tr>
+            <td>Philadelphia 76ers</td>
+            <td>46</td>
+            </tr>
+            <tr>
+            <td>Toronto Raptors</td>
+            <td>45</td>
+            </tr>
+            <tr>
+            <td>Golden State Warriors</td>
+            <td>43</td>
+            </tr>
+            <tr>
+            <td>Indiana Pacers</td>
+            <td>42</td>
+            </tr>
+            <tr>
+            <td>Boston Celtics</td>
+            <td>41</td>
+            </tr>
+            <tr>
+            <td>Dallas Mavericks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>Memphis Grizzlies</td>
+            <td>41</td>
+            </tr>
+            <tr>
+            <td>Atlanta Hawks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>New Orleans Pelicans</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>New York Knicks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>San Antonio Spurs</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Miami Heat</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Charlotte Hornets</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Chicago Bulls</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Portland Trail Blazers</td>
+            <td>35</td>
+            </tr>
+            <tr>
+            <td>Detroit Pistons</td>
+            <td>30</td>
+            </tr>
+            <tr>
+            <td>Washington Wizards</td>
+            <td>27</td>
+            </tr>
+            <tr>
+            <td>Sacramento Kings</td>
+            <td>26</td>
+            </tr>
+            <tr>
+            <td>Oklahoma City Thunder</td>
+            <td>26</td>
+            </tr>
+            <tr>
+            <td>Houston Rockets</td>
+            <td>25</td>
+            </tr>
+            <tr>
+            <td>Orlando Magic</td>
+            <td>20</td>
+            </tr>
+            <tr>
+            <td>Cleveland Cavaliers</td>
+            <td>20</td>
+            </tr>
+            <tr>
+            <td>Minnesota Timberwolves</td>
+            <td>19</td>
+            </tr>
+            </tbody></table>
 
         <h1>Analysis</h1>
-        
+        <p></p>
+
+
     </div>
 </body>
 
