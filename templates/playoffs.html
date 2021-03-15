@@ -11,9 +11,117 @@
     svg {
         margin: 5px;
     }
-    
-    
 
+    .header {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #HeaderImage {
+        width: 100%;
+        height: 400px;
+        padding: 0px;
+    }
+
+    #ArticleContainer {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding: 30px;
+    }
+
+    #ArticleImage {
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 20px;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    pre {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: inset;
+        border-color: #BF5700;
+        border-radius: 5px;
+        border-width: 5px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    dt {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
+
+    .east_qual {
+        Width: 50%;
+    }
+
+    .west_qual {
+        Width: 50%;
+    }
+ 
 </style>
 
 <header>
@@ -53,32 +161,104 @@
 
 <body>
     <div id=HeaderImage class=container-fluid>
-        <img class=header src="../static/pics/2021_header.jpeg">
+        <img class=header src="../static/pics/PlayoffPredictions/finals2.jpg">
     </div>
     <div id="ArticleContainer" class=container>
-        <h1>Season Predictions</h1>
-        <p>Multiple Linear Regression</p>
-        <h2>Main Idea</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa. Libero volutpat sed cras ornare arcu dui. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Velit sed ullamcorper morbi tincidunt ornare massa. Id donec ultrices tincidunt arcu non sodales neque sodales ut. Sed faucibus turpis in eu mi bibendum neque egestas congue. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. In pellentesque massa placerat duis ultricies lacus. Massa sapien faucibus et molestie ac feugiat. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Dictum varius duis at consectetur lorem donec massa sapien.</p>
-        <h2>Training Data</h2>
-        <p>explain</p>
-        <img id="ArticleImage" src="../static/pics/SeasonPredictions/p-score.PNG">
-        <h2>etc</h2>
-        <p>TEST TEST TEST</p>
-        <pre>
-            <code class="language-python">
-                predictions = model.predict(X_21)
-                print(f"First 32 Predictions:   {predictions[:32]}")
-                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
-            </code>
-        </pre>
+        <h1>Playoff Predictions</h1>
+        <p>Expanding on our predicted outcome of the 2021 Regular season, we took on the task to attemp to predict the playoffs round by round with a bracket built from our predictions.</p>
+        <p>After exporting the linear regression predictions we can seperate the teams based on conference, as the top 8 teams from each conference are seeded into the bracket as apposed to the top 16 teams total.</p>
+        <script src="https://gist.github.com/wgaechter/7a6ca93ff1c4a5056edaad10e5866096.js"></script>
+        <p>Now with our teams seperated by conference, sorted by their predicted win counts, and filtered to only contain the top 8 teams that would participate in our playoffs, we can begin creating the bracket and attempting to predcit the possible winners of each series</p>
+        <h1>Playoff Teams</h1>
+        <h2>Eastern Conference</h2>
+        <table id="east_qual" class="table table-bordered table-hover table-condensed">
+            <tbody><tr>
+            <td>Team</td>
+            <td>Predicted Wins</td>
+            </tr>
+            <tr>
+            <td>Milwaukee Bucks</td>
+            <td>58.397487588391215</td>
+            </tr>
+            <tr>
+            <td>Brooklyn Nets</td>
+            <td>50.553044695496006</td>
+            </tr>
+            <tr>
+            <td>Philadelphia 76ers</td>
+            <td>46.08731777165392</td>
+            </tr>
+            <tr>
+            <td>Toronto Raptors</td>
+            <td>45.28433825678073</td>
+            </tr>
+            <tr>
+            <td>Indiana Pacers</td>
+            <td>42.782891282266846</td>
+            </tr>
+            <tr>
+            <td>Boston Celtics</td>
+            <td>41.94509975198489</td>
+            </tr>
+            <tr>
+            <td>New York Knicks</td>
+            <td>40.55277475183972</td>
+            </tr>
+            <tr>
+            <td>Atlanta Hawks</td>
+            <td>40.29886892797435</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Western Conference</h2>
+        <table id="west_qual" class="table table-bordered table-hover table-condensed">
+            <tbody><tr>
+            <td>Team</td>
+            <td>Predicted Wins</td>
+            </tr>
+            <tr>
+            <td>Utah Jazz</td>
+            <td>67.2487537802314</td>
+            </tr>
+            <tr>
+            <td>Phoenix Suns</td>
+            <td>55.01512964681528</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Clippers</td>
+            <td>54.686639307658155</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Lakers</td>
+            <td>53.162588789864934</td>
+            </tr>
+            <tr>
+            <td>Denver Nuggets</td>
+            <td>50.43155198985645</td>
+            </tr>
+            <tr>
+            <td>Golden State Warriors</td>
+            <td>43.503915666253604</td>
+            </tr>
+            <tr>
+            <td>Memphis Grizzlies</td>
+            <td>41.167466890870436</td>
+            </tr>
+            <tr>
+            <td>Dallas Mavericks</td>
+            <td>40.822144283797655</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 
+<footer>
+    <div id="footerLink">
+        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+    </div>
+</footer>
 
-<script src="../static/js/bootstrap.bundle.min.js"></script>
-
-</html>
 
 <script src="../static/js/bootstrap.bundle.min.js"></script>
 
