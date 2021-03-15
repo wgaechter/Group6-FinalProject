@@ -126,8 +126,34 @@
     #west_qual {
         Width: auto;
     }
+
+    #champs {
+        width: 100%;
+    }
+
+    button {
+        text-align: center;
+        background-color: #36454f;
+        color: #CACCCE;
+        width: fit-content;
+    }
+
+    #buttonDiv {
+        text-align: center;
+        padding-bottom: 20px;
+    }
  
 </style>
+<script>
+    function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
+</script>
 
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
@@ -293,6 +319,21 @@
             <li>West Conference Playoffs Round 2 Game 2: Los Angeles Clippers vs. Brooklyn Nets</li>
         </ul>
         <h1>Round 3 - Conference Finals</h1>
+        <script src="https://gist.github.com/wgaechter/27b0aa8098c0d42d688029cf0c887842.js"></script>
+        <ul>
+            <li>West Conference Finals: Milwaukee Bucks vs. Brooklyn Nets</li>
+            <li>East Conference Finals: Utah Jazz vs. Los Angeles Clippers</li>
+        </ul>
+        <h1>2021 NBA Finals</h1>
+        <script src="https://gist.github.com/wgaechter/6b2f727544afb64154c8ffba0b662b3d.js"></script>
+        <p>Our metric model has lined up the Milwaukee Bucks and Utah Jazz</p>
+        <p>Running the script outputs our projected 2021 NBA Champions</p>
+        <div id="buttonDiv">
+            <button onclick="myFunction()">Run Script</button>
+        </div>
+        <div id="myDIV">
+            <img id="champs" src="../static/pics/PlayoffPredictions/2021Champs.jpg">
+        </div>
     </div>
 </body>
 
