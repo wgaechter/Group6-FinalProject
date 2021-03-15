@@ -114,12 +114,17 @@
         text-decoration: underline;
     }
 
-    .east_qual {
-        Width: 50%;
+    #tableContainer {
+        padding: 0px;
+        margin: 0px;
     }
 
-    .west_qual {
-        Width: 50%;
+    #east_qual {
+        Width: auto;
+    }
+
+    #west_qual {
+        Width: auto;
     }
  
 </style>
@@ -170,86 +175,101 @@
         <script src="https://gist.github.com/wgaechter/7a6ca93ff1c4a5056edaad10e5866096.js"></script>
         <p>Now with our teams seperated by conference, sorted by their predicted win counts, and filtered to only contain the top 8 teams that would participate in our playoffs, we can begin creating the bracket and attempting to predcit the possible winners of each series</p>
         <h1>Playoff Teams</h1>
-        <h2>Eastern Conference</h2>
-        <table id="east_qual" class="table table-bordered table-hover table-condensed">
-            <tbody><tr>
-            <td>Team</td>
-            <td>Predicted Wins</td>
-            </tr>
-            <tr>
-            <td>Milwaukee Bucks</td>
-            <td>58.397487588391215</td>
-            </tr>
-            <tr>
-            <td>Brooklyn Nets</td>
-            <td>50.553044695496006</td>
-            </tr>
-            <tr>
-            <td>Philadelphia 76ers</td>
-            <td>46.08731777165392</td>
-            </tr>
-            <tr>
-            <td>Toronto Raptors</td>
-            <td>45.28433825678073</td>
-            </tr>
-            <tr>
-            <td>Indiana Pacers</td>
-            <td>42.782891282266846</td>
-            </tr>
-            <tr>
-            <td>Boston Celtics</td>
-            <td>41.94509975198489</td>
-            </tr>
-            <tr>
-            <td>New York Knicks</td>
-            <td>40.55277475183972</td>
-            </tr>
-            <tr>
-            <td>Atlanta Hawks</td>
-            <td>40.29886892797435</td>
-            </tr>
-            </tbody>
-        </table>
-        <h2>Western Conference</h2>
-        <table id="west_qual" class="table table-bordered table-hover table-condensed">
-            <tbody><tr>
-            <td>Team</td>
-            <td>Predicted Wins</td>
-            </tr>
-            <tr>
-            <td>Utah Jazz</td>
-            <td>67.2487537802314</td>
-            </tr>
-            <tr>
-            <td>Phoenix Suns</td>
-            <td>55.01512964681528</td>
-            </tr>
-            <tr>
-            <td>Los Angeles Clippers</td>
-            <td>54.686639307658155</td>
-            </tr>
-            <tr>
-            <td>Los Angeles Lakers</td>
-            <td>53.162588789864934</td>
-            </tr>
-            <tr>
-            <td>Denver Nuggets</td>
-            <td>50.43155198985645</td>
-            </tr>
-            <tr>
-            <td>Golden State Warriors</td>
-            <td>43.503915666253604</td>
-            </tr>
-            <tr>
-            <td>Memphis Grizzlies</td>
-            <td>41.167466890870436</td>
-            </tr>
-            <tr>
-            <td>Dallas Mavericks</td>
-            <td>40.822144283797655</td>
-            </tr>
-            </tbody>
-        </table>
+        <div id="tableContainer" class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    <div class="table-responsive">
+                        <h2>Eastern Conference</h2>
+                        <table id="east_qual" class="table table-bordered table-hover table-condensed">
+                            <tbody><tr>
+                            <td>Team</td>
+                            <td>Predicted Wins</td>
+                            </tr>
+                            <tr>
+                            <td>Milwaukee Bucks</td>
+                            <td>58.397487588391215</td>
+                            </tr>
+                            <tr>
+                            <td>Brooklyn Nets</td>
+                            <td>50.553044695496006</td>
+                            </tr>
+                            <tr>
+                            <td>Philadelphia 76ers</td>
+                            <td>46.08731777165392</td>
+                            </tr>
+                            <tr>
+                            <td>Toronto Raptors</td>
+                            <td>45.28433825678073</td>
+                            </tr>
+                            <tr>
+                            <td>Indiana Pacers</td>
+                            <td>42.782891282266846</td>
+                            </tr>
+                            <tr>
+                            <td>Boston Celtics</td>
+                            <td>41.94509975198489</td>
+                            </tr>
+                            <tr>
+                            <td>New York Knicks</td>
+                            <td>40.55277475183972</td>
+                            </tr>
+                            <tr>
+                            <td>Atlanta Hawks</td>
+                            <td>40.29886892797435</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="table-responsive">
+                        <h2>Western Conference</h2>
+                        <table id="west_qual" class="table table-bordered table-hover table-condensed">
+                            <tbody><tr>
+                            <td>Team</td>
+                            <td>Predicted Wins</td>
+                            </tr>
+                            <tr>
+                            <td>Utah Jazz</td>
+                            <td>67.2487537802314</td>
+                            </tr>
+                            <tr>
+                            <td>Phoenix Suns</td>
+                            <td>55.01512964681528</td>
+                            </tr>
+                            <tr>
+                            <td>Los Angeles Clippers</td>
+                            <td>54.686639307658155</td>
+                            </tr>
+                            <tr>
+                            <td>Los Angeles Lakers</td>
+                            <td>53.162588789864934</td>
+                            </tr>
+                            <tr>
+                            <td>Denver Nuggets</td>
+                            <td>50.43155198985645</td>
+                            </tr>
+                            <tr>
+                            <td>Golden State Warriors</td>
+                            <td>43.503915666253604</td>
+                            </tr>
+                            <tr>
+                            <td>Memphis Grizzlies</td>
+                            <td>41.167466890870436</td>
+                            </tr>
+                            <tr>
+                            <td>Dallas Mavericks</td>
+                            <td>40.822144283797655</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>From here we have our brackets and can begin determining the potential winner</p>
+        <br>
+        <h1>Round One</h1>
     </div>
 </body>
 
