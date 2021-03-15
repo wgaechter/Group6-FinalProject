@@ -134,8 +134,13 @@
     button {
         text-align: center;
         background-color: #36454f;
-        color: #CACCCE;
-        width: fit-content;
+        color: white;
+        width: 50%;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
     #buttonDiv {
@@ -326,8 +331,8 @@
         </ul>
         <h1>2021 NBA Finals</h1>
         <script src="https://gist.github.com/wgaechter/6b2f727544afb64154c8ffba0b662b3d.js"></script>
-        <p>Our metric model has lined up the Milwaukee Bucks and Utah Jazz</p>
-        <p>Running the script outputs our projected 2021 NBA Champions</p>
+        <p style="text-align:center">Our metric model has lined up the Milwaukee Bucks and Utah Jazz</p>
+        <p style="text-align:center">Running the script outputs our projected 2021 NBA Champions</p>
         <div id="buttonDiv">
             <button onclick="myFunction()">Run Script</button>
         </div>
