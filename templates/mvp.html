@@ -11,9 +11,108 @@
     svg {
         margin: 5px;
     }
-    
-    
 
+    .header {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #HeaderImage {
+        width: 100%;
+        height: 400px;
+        padding: 0px;
+    }
+
+    #ArticleContainer {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding: 30px;
+    }
+
+    #ArticleImage {
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 20px;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    pre {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: inset;
+        border-color: #BF5700;
+        border-radius: 5px;
+        border-width: 5px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    dt {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
 </style>
 
 <header>
@@ -56,22 +155,76 @@
         <img class=header src="../static/pics/2021_header.jpeg">
     </div>
     <div id="ArticleContainer" class=container>
-        <h1>Season Predictions</h1>
-        <p>Multiple Linear Regression</p>
+        <h1>MVP Predictions</h1>
         <h2>Main Idea</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa. Libero volutpat sed cras ornare arcu dui. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Velit sed ullamcorper morbi tincidunt ornare massa. Id donec ultrices tincidunt arcu non sodales neque sodales ut. Sed faucibus turpis in eu mi bibendum neque egestas congue. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. In pellentesque massa placerat duis ultricies lacus. Massa sapien faucibus et molestie ac feugiat. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Dictum varius duis at consectetur lorem donec massa sapien.</p>
-        <h2>Training Data</h2>
-        <p>explain</p>
-        <img id="ArticleImage" src="../static/pics/SeasonPredictions/p-score.PNG">
-        <h2>etc</h2>
-        <p>TEST TEST TEST</p>
-        <pre>
-            <code class="language-python">
-                predictions = model.predict(X_21)
-                print(f"First 32 Predictions:   {predictions[:32]}")
-                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
-            </code>
-        </pre>
+        <p>Our group leveraged individual NBA player data from the past 10 seasons.  Our goal was to use multiple linear regression to train our model and attempt to predict the potential NBA MVP</p>
+        <h2>Data</h2>
+        <p>Using individual player season data from basketball-reference.com, we were able to aggreage the multiple seasons into a single file for model training.</p>
+        <p>We used standard basketball statistics listed below as the basis for the model training.  We felt these statistic metrics were the best indicators for a strong season, and potentialy an MVP season.</p>
+        <dl> <!--Format to be more list like-->
+            <dt>Age</dt>
+            <dd>Players Age during the course of the season</dd>
+            <dt>Points (PTS)</dt>
+            <dd>Players points scored on average per game</dd>
+            <dt>Total Rebounds (TRB)</dt>
+            <dd>Players total rebounds (both offensive and defensive) on average per game</dd>
+            <dt>Assists (AST)</dt>
+            <dd>Players assists on average per game</dd>
+            <dt>Steals (STL)</dt>
+            <dd>Players steals on average per game</dd>
+            <dt>Blocks (BLK)</dt>
+            <dd>Players blocks on average per game</dd>
+            <dt>Field Goal Percentage (FG%)</dt>
+            <dd>Players shooting percntage from the field per game</dd>
+            <dt>Three Point Percentage (3P%)</dt>
+            <dd>Players shooting percentage from three point range per game</dd>
+            <dt>Free Throw Percentage (FT%)</dt>
+            <dd>Players average free throw completion percentage per game</dd>
+        </dl>
+        <h2>Model</h2>
+        <p>A binary system was used to train the data, helping determine if a players stats were on an MVP caliber level during that season.  This was the basis for the model to understand the testing statistics and be able to predict a potential MVP winner from the 2021 Season.</p>
+        <script src="https://gist.github.com/wgaechter/a6589e9e384e0eca9d00ab4b2ab2540d.js"></script>
+        <p>Line 6 of model.py (as seen above) we are changing our MVP classisification to a binary integer for the model to determine if the input describes an MVP level season.</p>
+        <script src="https://gist.github.com/wgaechter/f7228f5a46aeac28e20c402f3bcbd241.js"></script>
+        <p>Above we modeling the actaul predicted probability of a player winning the MVP from our 2021 season stats.  Not only will this model predict a binary outcome of a MVP caliber season, but we can see the actaul likelyhood of the trophy being awarded to an individual.</p>
+        <h3>R-Squared Score</h3> <!--make smaller-->
+        <p>Using SciKit's own R-Squared scoring tools, our tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
+        <h1>Results</h1>
+        <h2>Inputing 2021 Data</h2>
+        <p>As we input the 2021 season statistics from the halfway point in the season, we recieve our predictions for the potential MVP at the end of the season.  Using our metrics as well as out past data that trained our model, we can accurately guess the potential MVP</p>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead><tr><th title="Field #2">Player</th>
+            <th title="Field #3">prediction</th>
+            <th title="Field #4">mvp prob</th>
+            </tr></thead>
+            <tbody><tr>
+            <td>Giannis Antetokounmpo\antetgi01</td>
+            <td>1</td>
+            <td>61.23</td>
+            </tr>
+            <tr>
+            <td>Nikola Jokić\jokicni01</td>
+            <td>1</td>
+            <td>51.92</td>
+            </tr>
+            <tr>
+            <td>Luka Dončić\doncilu01</td>
+            <td>0</td>
+            <td>44.74</td>
+            </tr>
+            <tr>
+            <td>James Harden\hardeja01</td>
+            <td>0</td>
+            <td>36.58</td>
+            </tr>
+            <tr>
+            <td>Joel Embiid\embiijo01</td>
+            <td>0</td>
+            <td>35.47</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class='tableauPlaceholder' id='viz1615853628877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;MVPPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615853628877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
     </div>
 </body>
 
