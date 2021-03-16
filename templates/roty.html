@@ -191,12 +191,12 @@
         <img class=header src="../static/pics/2021_header.jpeg">
     </div>
     <div id="ArticleContainer" class=container>
-        <h1>Rookie of the Year Predictions</h1>
+        <h1>Rookie of the Year(ROY) Predictions</h1>
         <h2>Main Idea</h2>
-        <p>Using similar strategies to our MVP predictive model, we can also simulate and predict a potential top rookie for the 2021 season.  Using past rookie of the year caliber seasons we can train another regression model to output the likley 2021 NBA Rookie of the Year.</p>
+        <p>Using similar strategies to our MVP predictive model, we can also simulate and predict a potential top rookie for the 2021 season.  Using past ROY caliber seasons we can train another regression model to output the likley 2021 NBA ROY.</p>
         <h2>Data</h2>
-        <p>Data was collected and complied from basketball-reference.com using their pre-filtered rookie statistics for our testing data as well as their past Rookie of the Year winning season statistics tables to train our models with.</p>
-        <p>compared to our MVP predictive model, this model used less metrics due to constraints in usable data for rookies compapared to MVPs.</p>
+        <p>Data was collected and complied from basketball-reference.com using their pre-filtered rookie statistics for our testing data as well as their past ROY winning season statistics tables to train our models with.</p>
+        <p>Compared to our MVP predictive model, this model used less metrics due to constraints in usable data for rookies compapared to MVPs.</p>
         <p>Our list of used metrics are as follows:</p>
         <dl>
             <dt>- Minutes Per Game (MP)</dt>
@@ -207,15 +207,15 @@
             <dd>Players total rebounds (both offensive and defensive) on average per game</dd>
             <dt>- Assists (AST)</dt>
         </dl>
-        <p>These statistics were chosen to best represnet a potential rookie of the year, as including Minutes per Game helps determine potential impact to a team.</p>
+        <p>These statistics were chosen to best represent a potential ROY, as including Minutes per Game helps determine potential impact to a team.</p>
         <h2>Model</h2>
-        <p>Our model for the Rookie of the year is similar to our MVP model.</p>
+        <p>Our model for the ROY is similar to our MVP model.</p>
         <script src="https://gist.github.com/wgaechter/50f9cda6608c9336d0b37aac58b9d10f.js"></script>
-        <p>The major change from MVP to Rookie of the Year is our change in X values due to the data constraints.</p>
+        <p>The major change from MVP to ROY is our change in X values due to the data constraints.</p>
         <p>As well as a binary prediction of ROY caliber, we include the percentage chance of winning the award outright</p>
         <script src="https://gist.github.com/wgaechter/d08257435141624a0dc8d5986823f89e.js"></script>
         <h3>R-Squared Score</h3>
-        <p>Our Rookie of the Year model was run through the SciKit scoring function.  The model when using split testing data received an R-Squared output of .9733.  While we expected a lower value due to the lower amount of different metrics, our score is still very close to a value of 1, showing a very high correlation.</p>
+        <p>Our ROY model was run through the SciKit scoring function.  The model when using split testing data received an R-Squared output of .9733.  While we expected a lower value due to the lower amount of different metrics, our score is still very close to a value of 1, showing a very high correlation.</p>
         <h1>Results</h1>
         <div id="buttonDiv">
             <button onclick="myFunction()">Run Script</button>
@@ -256,20 +256,20 @@
                 </tbody>
             </table>
             <h1>Analysis</h1>
-            <p>Our model, similarly to our MVP outputs, predicted two potential Rookie of the Year caliber seasons.  LaMelo Ball and Tyrese Haliburton both have produced numbers on track for an elite rookie season when compared to those beofre them.  Cole Anthony, Anthony Edwards, and James Wiseman all have produced a season with potential rookie of the year probabilities above 20%.  The next best rookie produced a sub 15% probability.</p>
-            <p>LaMelo Ball's season thus far has produced a predictive probability of 83.5%, a significantly higher probablity than Tyrese in second place with 54%.  Our model has predicted that LaMelo Ball has almost certainly locked himself into a Rookie of the Year award for the 2021 season.</p>
-            <p>In the future, having access to more robust rookie statistics, such as the metrics available for our MVP model, would greatley benefit our model with a much more accurate prediction.</p>
+            <p>Our model, similarly to our MVP outputs, predicted two potential ROY caliber seasons.  LaMelo Ball and Tyrese Haliburton both have produced numbers on track for an elite rookie season when compared to those beofre them.  Cole Anthony, Anthony Edwards, and James Wiseman all have produced a season with potential ROY probabilities above 20%.  The next best rookie produced a sub 15% probability.</p>
+            <p>LaMelo Ball's season thus far has produced a predictive probability of 83.5%, a significantly higher probability than Tyrese in second place with 54%.  Our model has predicted that LaMelo Ball has almost certainly locked himself into a Rookie of the Year award for the 2021 season.</p>
+            <p>In the future, having access to more robust rookie statistics, such as the metrics available for our MVP model, would greatly benefit our model with a much more accurate prediction.</p>
         </div>
         <div class='tableauPlaceholder' id='viz1615858330306' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;ROYPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;ROYPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;ROYPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615858330306');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <div id="nextlink">
-            <a href="mvp.html">Click Here for our MVP predictions</a>
+            <a href="mvp.html">Click Here for our MVP Predictions</a>
         </div>
     </div>
 </body>
 
 <footer>
     <div id="footerLink">
-        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+        <a id="homelink" href="../index.html">Click Here to Return to the Dashboard</a>
     </div>
 </footer>
 

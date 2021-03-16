@@ -161,10 +161,10 @@
     <div id="ArticleContainer" class=container>
         <h1>MVP Predictions</h1>
         <h2>Main Idea</h2>
-        <p>Our group leveraged individual NBA player data from the past 10 seasons.  Our goal was to use multiple linear regression to train our model and attempt to predict the potential NBA MVP</p>
+        <p>Our group leveraged individual NBA player data from the past 10 seasons.  The goal was to use multiple linear regression to train our model and attempt to predict the potential NBA MVP.</p>
         <h2>Data</h2>
-        <p>Using individual player season data from basketball-reference.com, we were able to aggreage the multiple seasons into a single file for model training.</p>
-        <p>We used standard basketball statistics listed below as the basis for the model training.  We felt these statistic metrics were the best indicators for a strong season, and potentialy an MVP season.</p>
+        <p>Using individual player season data from basketball-reference.com, we were able to aggregate the multiple seasons into a single file for model training.</p>
+        <p>We used standard basketball statistics listed below as the basis for the model training.  It was determined that these statistic metrics were the best indicators for a strong season, and potentialy a MVP season.</p>
         <dl>
             <dt>- Age</dt>
             <dd>Players Age during the course of the season</dd>
@@ -186,16 +186,16 @@
             <dd>Players average free throw completion percentage per game</dd>
         </dl>
         <h2>Model</h2>
-        <p>A binary system was used to train the data, helping determine if a players stats were on an MVP caliber level during that season.  This was the basis for the model to understand the testing statistics and be able to predict a potential MVP winner from the 2021 Season.</p>
+        <p>A binary system was used to train the data, helping determine if a player's statistics were on a MVP caliber level during that season.  This was the basis for the model to understand the testing statistics and be able to predict a potential MVP winner from the 2021 Season.</p>
         <script src="https://gist.github.com/wgaechter/a6589e9e384e0eca9d00ab4b2ab2540d.js"></script>
-        <p>Line 6 of model.py (as seen above) we are changing our MVP classisification to a binary integer for the model to determine if the input describes an MVP level season.</p>
+        <p>Line 6 of model.py (as seen above) is changing the MVP classification to a binary integer for the model to determine if the input describes an MVP level season.</p>
         <script src="https://gist.github.com/wgaechter/f7228f5a46aeac28e20c402f3bcbd241.js"></script>
-        <p>Above we modeling the actaul predicted probability of a player winning the MVP from our 2021 season stats.  Not only will this model predict a binary outcome of a MVP caliber season, but we can see the actaul likelyhood of the trophy being awarded to an individual.</p>
+        <p>Above is modeling the predicted probability of a player winning the MVP from our 2021 season statistics.  Not only will this model predict a binary outcome of a MVP caliber season, but we can see the actual likelihood of the trophy being awarded to an individual.</p>
         <h3>R-Squared Score</h3>
-        <p>Using SciKit's own R-Squared scoring tools, our tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
+        <p>Using SciKit's own R-Squared scoring tools, the tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
         <h1>Results</h1> <!--Results Button-->
         <h2>Inputing 2021 Data</h2>
-        <p>As we input the 2021 season statistics from the halfway point in the season, we recieve our predictions for the potential MVP at the end of the season.  Using our metrics as well as out past data that trained our model, we can accurately guess the potential MVP</p>
+        <p>As we input the 2021 season statistics from the halfway point in the season along with the past data that trained our model, we can accurately predict the potential MVP.</p>
         <table class="table table-bordered table-hover table-condensed">
             <thead><tr><th title="Field #2">Player</th>
             <th title="Field #3">prediction</th>
@@ -230,17 +230,17 @@
         </table>
         <div class='tableauPlaceholder' id='viz1615853628877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;MVPPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615853628877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <h1>Analysis</h1>
-        <p>Our prediction output gave us two potential players on track for an MVP caliber season.  Giannis Antetokounmpo and Nikola Jokić, based on our metrics so far through the 2021 season, are predicted to continue the pace into MVP discussion.  Our percentage based predictive model also identified multiple other potential candidates; However, these players are predicted to fall short of a elite level season.  These players include NBA all-stars such as Luka Dončić, James Harden, Joel Embiid, and Ben Simmons.</p>
-        <p>For future predictive projects, as well as continuing this project, it would have been beneficial and intriguing to include additional metrics and stats.  Advanced statistics such as defensive ratings, team success, on court plus/minus ratings, and multiple additional statistics we did not either have access to or time to complile.</p>
+        <p>Based on the metrics so far in the 2021 season, the prediction output gave two potential players on track for an MVP caliber season: Giannis Antetokounmpo and Nikola Jokić. Our percentage based predictive model also identified multiple other potential candidates; however, these players are predicted to fall short of a elite level season.  These players include NBA all-stars such as Luka Dončić, James Harden, Joel Embiid, and Ben Simmons.</p>
+        <p>For future predictive projects, as well as continuing this project, it would have been beneficial and intriguing to include additional metrics and statistics.  For these advanced statistics, such as defensive ratings, team success, on court plus/minus ratings, and multiple additional statistics we either did not have access to or time to compile.</p>
         <div id="nextlink">
-            <a href="roty.html">Click Here for our Rookie of the Year predictions</a>
+            <a href="roty.html">Click Here for our Rookie of the Year Predictions</a>
         </div>
     </div>
 </body>
 
 <footer>
     <div id="footerLink">
-        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+        <a id="homelink" href="../index.html">Click Here to Return to the Dashboard</a>
     </div>
 </footer>
 
