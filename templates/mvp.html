@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>2021 Most Valuable Player</title>
+</head>
+
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+    svg {
+        margin: 5px;
+    }
+
+    .header {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #HeaderImage {
+        width: 100%;
+        height: 400px;
+        padding: 0px;
+    }
+
+    #ArticleContainer {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding: 30px;
+    }
+
+    #ArticleImage {
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 20px;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    pre {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: inset;
+        border-color: #BF5700;
+        border-radius: 5px;
+        border-width: 5px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    dt {
+        font-style: italic;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
+</style>
+
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Project Overview</h4>
+            <p class="text-muted">Group 6's Machine Learning Project for the University of Minnesota's Data Science and Analytics Bootcamp.  Taking a look at the ongoing NBA 2021 Season and using past seasons data to train multiple linear regression models to predict the outcome of the 2021 regular season, playoffs, MVP, and Rookie of the  year.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Authors</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://github.com/wgaechter/Group6-FinalProject" class="text-white">Project Github</a></li>
+              <li><a href="https://github.com/wgaechter" class="text-white">Will Gaechter's Portfolio</a></li>
+              <li><a href="https://github.com/jpcurran1" class="text-white">John Curran's Portfolio</a></li>
+              <li><a href="https://github.com/jennifer-powell" class="text-white">Jennifer Powell's Portfolio</a></li>
+              <li><a href="https://github.com/daniale93" class="text-white">Daniel Torres' Portfolio</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 4a8.037 8.037 0 0 0-3.114.629 8.019 8.019 0 0 0-4.724 5.76 8.042 8.042 0 0 0 .467 4.725 7.99 7.99 0 0 0 1.714 2.543 7.993 7.993 0 0 0 11.314 0A7.968 7.968 0 0 0 20 12a7.995 7.995 0 0 0-.629-3.114 7.96 7.96 0 0 0-1.714-2.542 8.005 8.005 0 0 0-4.046-2.18A8.03 8.03 0 0 0 12.001 4zm1.163 9.118l.045-.015.212.57a28.14 28.14 0 0 1 1.248 4.618 6.798 6.798 0 0 1-2.668.541c-1.55 0-2.98-.516-4.126-1.387l-.073-.06.036-.07c.232-.448 1.651-2.917 5.326-4.197zm5.583-.033a6.837 6.837 0 0 1-2.928 4.582l-.092-.499a30.737 30.737 0 0 0-1.238-4.381c2.206-.353 4.117.252 4.258.298zm-6.558-2.275c.196.383.383.773.554 1.162l-.269.081c-2.992.967-4.787 3.334-5.358 4.192l-.2.317-.184-.214A6.806 6.806 0 0 1 5.168 12c0-.073.003-.144.006-.216l.378.001c.99-.009 3.766-.116 6.636-.975zm5.089-3.15a6.798 6.798 0 0 1 1.553 4.272l-.428-.081c-.789-.135-2.55-.367-4.33-.143l-.148-.353a20.456 20.456 0 0 0-.454-.99c2.698-1.102 3.794-2.686 3.807-2.705zM9.085 5.82l.49.685c.493.71 1.287 1.901 2.047 3.252-3.28.872-6.127.838-6.308.834a6.842 6.842 0 0 1 3.771-4.77zM12 5.169c1.73 0 3.309.645 4.513 1.704l-.091.126c-.295.38-1.329 1.543-3.478 2.348l-.252-.452A34.757 34.757 0 0 0 10.39 5.36 6.822 6.822 0 0 1 12 5.168z"/></svg>        <strong>NBA 2021 Crystal Ball</strong>
+  
+          <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">-->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+</header>
+
+<body>
+    <div id=HeaderImage class=container-fluid>
+        <img class=header src="../static/pics/2021_header.jpeg">
+    </div>
+    <div id="ArticleContainer" class=container>
+        <h1>MVP Predictions</h1>
+        <h2>Main Idea</h2>
+        <p>Our group leveraged individual NBA player data from the past 10 seasons.  Our goal was to use multiple linear regression to train our model and attempt to predict the potential NBA MVP</p>
+        <h2>Data</h2>
+        <p>Using individual player season data from basketball-reference.com, we were able to aggreage the multiple seasons into a single file for model training.</p>
+        <p>We used standard basketball statistics listed below as the basis for the model training.  We felt these statistic metrics were the best indicators for a strong season, and potentialy an MVP season.</p>
+        <dl>
+            <dt>- Age</dt>
+            <dd>Players Age during the course of the season</dd>
+            <dt>- Points (PTS)</dt>
+            <dd>Players points scored on average per game</dd>
+            <dt>- Total Rebounds (TRB)</dt>
+            <dd>Players total rebounds (both offensive and defensive) on average per game</dd>
+            <dt>- Assists (AST)</dt>
+            <dd>Players assists on average per game</dd>
+            <dt>- Steals (STL)</dt>
+            <dd>Players steals on average per game</dd>
+            <dt>- Blocks (BLK)</dt>
+            <dd>Players blocks on average per game</dd>
+            <dt>- Field Goal Percentage (FG%)</dt>
+            <dd>Players shooting percntage from the field per game</dd>
+            <dt>- Three Point Percentage (3P%)</dt>
+            <dd>Players shooting percentage from three point range per game</dd>
+            <dt>- Free Throw Percentage (FT%)</dt>
+            <dd>Players average free throw completion percentage per game</dd>
+        </dl>
+        <h2>Model</h2>
+        <p>A binary system was used to train the data, helping determine if a players stats were on an MVP caliber level during that season.  This was the basis for the model to understand the testing statistics and be able to predict a potential MVP winner from the 2021 Season.</p>
+        <script src="https://gist.github.com/wgaechter/a6589e9e384e0eca9d00ab4b2ab2540d.js"></script>
+        <p>Line 6 of model.py (as seen above) we are changing our MVP classisification to a binary integer for the model to determine if the input describes an MVP level season.</p>
+        <script src="https://gist.github.com/wgaechter/f7228f5a46aeac28e20c402f3bcbd241.js"></script>
+        <p>Above we modeling the actaul predicted probability of a player winning the MVP from our 2021 season stats.  Not only will this model predict a binary outcome of a MVP caliber season, but we can see the actaul likelyhood of the trophy being awarded to an individual.</p>
+        <h3>R-Squared Score</h3>
+        <p>Using SciKit's own R-Squared scoring tools, our tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
+        <h1>Results</h1> <!--Results Button-->
+        <h2>Inputing 2021 Data</h2>
+        <p>As we input the 2021 season statistics from the halfway point in the season, we recieve our predictions for the potential MVP at the end of the season.  Using our metrics as well as out past data that trained our model, we can accurately guess the potential MVP</p>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead><tr><th title="Field #2">Player</th>
+            <th title="Field #3">prediction</th>
+            <th title="Field #4">mvp prob</th>
+            </tr></thead>
+            <tbody><tr>
+            <td>Giannis Antetokounmpo\antetgi01</td>
+            <td>1</td>
+            <td>61.23</td>
+            </tr>
+            <tr>
+            <td>Nikola Jokić\jokicni01</td>
+            <td>1</td>
+            <td>51.92</td>
+            </tr>
+            <tr>
+            <td>Luka Dončić\doncilu01</td>
+            <td>0</td>
+            <td>44.74</td>
+            </tr>
+            <tr>
+            <td>James Harden\hardeja01</td>
+            <td>0</td>
+            <td>36.58</td>
+            </tr>
+            <tr>
+            <td>Joel Embiid\embiijo01</td>
+            <td>0</td>
+            <td>35.47</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class='tableauPlaceholder' id='viz1615853628877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;MVPPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615853628877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <h1>Analysis</h1>
+        <p>Our prediction output gave us two potential players on track for an MVP caliber season.  Giannis Antetokounmpo and Nikola Jokić, based on our metrics so far through the 2021 season, are predicted to continue the pace into MVP discussion.  Our percentage based predictive model also identified multiple other potential candidates; However, these players are predicted to fall short of a elite level season.  These players include NBA all-stars such as Luka Dončić, James Harden, Joel Embiid, and Ben Simmons.</p>
+        <p>For future predictive projects, as well as continuing this project, it would have been beneficial and intriguing to include additional metrics and stats.  Advanced statistics such as defensive ratings, team success, on court plus/minus ratings, and multiple additional statistics we did not either have access to or time to complile.</p>
+        <div id="nextlink">
+            <a href="roty.html">Click Here for our Rookie of the Year predictions</a>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div id="footerLink">
+        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+    </div>
+</footer>
+
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</html>

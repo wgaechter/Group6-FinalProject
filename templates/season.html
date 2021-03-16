@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>2021 Season Predictions</title>
+</head>
+
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+    svg {
+        margin: 5px;
+    }
+
+    .header {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #HeaderImage {
+        width: 100%;
+        height: 400px;
+        padding: 0px;
+    }
+
+    #ArticleContainer {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding: 30px;
+    }
+
+    #ArticleImage {
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 20px;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    pre {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: inset;
+        border-color: #BF5700;
+        border-radius: 5px;
+        border-width: 5px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    dt {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
+ 
+</style>
+
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Project Overview</h4>
+            <p class="text-muted">Group 6's Machine Learning Project for the University of Minnesota's Data Science and Analytics Bootcamp.  Taking a look at the ongoing NBA 2021 Season and using past seasons data to train multiple linear regression models to predict the outcome of the 2021 regular season, playoffs, MVP, and Rookie of the  year.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Authors</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://github.com/wgaechter/Group6-FinalProject" class="text-white">Project Github</a></li>
+              <li><a href="https://github.com/wgaechter" class="text-white">Will Gaechter's Portfolio</a></li>
+              <li><a href="https://github.com/jpcurran1" class="text-white">John Curran's Portfolio</a></li>
+              <li><a href="https://github.com/jennifer-powell" class="text-white">Jennifer Powell's Portfolio</a></li>
+              <li><a href="https://github.com/daniale93" class="text-white">Daniel Torres' Portfolio</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 4a8.037 8.037 0 0 0-3.114.629 8.019 8.019 0 0 0-4.724 5.76 8.042 8.042 0 0 0 .467 4.725 7.99 7.99 0 0 0 1.714 2.543 7.993 7.993 0 0 0 11.314 0A7.968 7.968 0 0 0 20 12a7.995 7.995 0 0 0-.629-3.114 7.96 7.96 0 0 0-1.714-2.542 8.005 8.005 0 0 0-4.046-2.18A8.03 8.03 0 0 0 12.001 4zm1.163 9.118l.045-.015.212.57a28.14 28.14 0 0 1 1.248 4.618 6.798 6.798 0 0 1-2.668.541c-1.55 0-2.98-.516-4.126-1.387l-.073-.06.036-.07c.232-.448 1.651-2.917 5.326-4.197zm5.583-.033a6.837 6.837 0 0 1-2.928 4.582l-.092-.499a30.737 30.737 0 0 0-1.238-4.381c2.206-.353 4.117.252 4.258.298zm-6.558-2.275c.196.383.383.773.554 1.162l-.269.081c-2.992.967-4.787 3.334-5.358 4.192l-.2.317-.184-.214A6.806 6.806 0 0 1 5.168 12c0-.073.003-.144.006-.216l.378.001c.99-.009 3.766-.116 6.636-.975zm5.089-3.15a6.798 6.798 0 0 1 1.553 4.272l-.428-.081c-.789-.135-2.55-.367-4.33-.143l-.148-.353a20.456 20.456 0 0 0-.454-.99c2.698-1.102 3.794-2.686 3.807-2.705zM9.085 5.82l.49.685c.493.71 1.287 1.901 2.047 3.252-3.28.872-6.127.838-6.308.834a6.842 6.842 0 0 1 3.771-4.77zM12 5.169c1.73 0 3.309.645 4.513 1.704l-.091.126c-.295.38-1.329 1.543-3.478 2.348l-.252-.452A34.757 34.757 0 0 0 10.39 5.36 6.822 6.822 0 0 1 12 5.168z"/></svg>        <strong>NBA 2021 Crystal Ball</strong>
+  
+          <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">-->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+</header>
+
+<body>
+    <div id=HeaderImage class=container-fluid>
+        <img class=header src="../static/pics/SeasonPredictions/header1.jpg">
+    </div>
+    <div id="ArticleContainer" class=container>
+        <h1>2021 Season Predictions</h1>
+        <p>Multiple Linear Regression</p>
+        <h2>Main Idea</h2>
+        <p>Utilizing Multiple linear Regression models, we set out to attempt to predict the final outcome of the 2021 using current team statistics from the halfway point in the 2021 NBA Season.</p>
+        <h1>Data</h1>
+        <h2>Source</h2>
+        <p>Data was collected from https://www.basketball-reference.com.  Using their "Team Ratings" tables we could use these metrics to help determine team skill and their impacts on win counts</p>
+        <dl>
+            <dt>Adjusted Margin of Victory (MOV/A)</dt>
+            <dd>Average difference between team points scored and team points allowed, adjusted for strength of schedule</dd>
+            <dt>Adjusted Offensive Rating (ORtg/A)</dt>
+            <dd>An estimate of points scored per 100 possessions, adjusted for strength of schedule</dd>
+            <dt>Adjusted Defensive Rating (DRtg/A)</dt>
+            <dd>An estimate of points allowed per 100 possessions, adjusted for strength of schedule</dd>
+            <dt>Adjusted Net Rating (NRtg/A)</dt>
+            <dd>A net aggregate of a teams ORtg/A and DRtg/A</dd>
+        </dl>
+        <p>The adjusted metrics were used as we felt it better reflected a teams's true points value, and would help create a more accurate prediction based on a teams conference or division</p>
+        <img id="ArticleImage" src="../static/pics/SeasonPredictions/ratings.PNG">
+        <h2>Training Data</h2>
+        <p>Data from the 2000 NBA season to the 2020 NBA season were collected and combined for model training.  Our process included using past seasons metric ratings and the corresponding wins to train the model to help accuratly predict wins from 2021's current metrics</p>
+        <!-- <pre>
+            <code class="language-python">
+                X = data[["MOV/A", "ORtg/A", "DRtg/A", "NRtg/A"]]
+                y = data["W"].values.reshape(-1,1)
+            </code>
+        </pre> -->
+        <script src="https://gist.github.com/wgaechter/4fbd47cfc86dec2c113befdc2aa87d8a.js"></script>        <img id="ArticleImage" src="../static/pics/SeasonPredictions/ResidualPlot.png">
+        <p>Multiple Regression models allow us to track the linear path of multiple X values, in this case our four main ranking metrics provided by https://www.basketball-reference.com.  Our Y output would be trained by past seasons total wins, and would be the predictive variable when inputing 2021 data.</p>
+        <p>Using Scikit-Learns' internal scoring methods, our training data returned a P-Value of .910 along with a testing score of .908.  These scores demonstrate a strong correlation between our metrics and wins.  This means our possible predictions should statisically be accurate.</p>
+        
+        <h1>Predictions</h1>
+        <p>Utilizing Scikits prediction tools, we could use our current 2021 Data and plug the information into our trained linear regression model to receive a predicted final standings for the 2021 season</p>
+        <!-- <pre>
+            <code class="language-python">
+                predictions = model.predict(X_21)
+                print(f"First 32 Predictions:   {predictions[:32]}")
+                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
+
+                pred = [x[0] for x in predictions]
+                preds = pd.Series(pred)
+                predictions_df = pd.concat([teams, preds],axis =1)
+                predictions_df.rename(columns = {0: "Predicted Wins"}, inplace=True)
+                predictions_df["Predicted Wins"] = predictions_df["Predicted Wins"].astype(int)
+                predictions_df.to_csv("Data/predicted_wins_rounded.csv")
+            </code>
+        </pre> -->
+        <script src="https://gist.github.com/wgaechter/a69ec19262b591f1ad04ac4a82ca574f.js"></script>
+        <p>the raw predictions were listed and sorted into predictions_df, which was then formatted into a digestable table to see exactly how many wins were given to each team.</p>
+        <table class="table table-bordered table-hover table-condensed">
+            <tbody><tr>
+            <td>Team</td>
+            <td>Predicted Wins</td>
+            </tr>
+            <tr>
+            <td>Utah Jazz</td>
+            <td>67</td>
+            </tr>
+            <tr>
+            <td>Milwaukee Bucks</td>
+            <td>58</td>
+            </tr>
+            <tr>
+            <td>Phoenix Suns</td>
+            <td>55</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Clippers</td>
+            <td>54</td>
+            </tr>
+            <tr>
+            <td>Los Angeles Lakers</td>
+            <td>53</td>
+            </tr>
+            <tr>
+            <td>Brooklyn Nets</td>
+            <td>50</td>
+            </tr>
+            <tr>
+            <td>Denver Nuggets</td>
+            <td>50</td>
+            </tr>
+            <tr>
+            <td>Philadelphia 76ers</td>
+            <td>46</td>
+            </tr>
+            <tr>
+            <td>Toronto Raptors</td>
+            <td>45</td>
+            </tr>
+            <tr>
+            <td>Golden State Warriors</td>
+            <td>43</td>
+            </tr>
+            <tr>
+            <td>Indiana Pacers</td>
+            <td>42</td>
+            </tr>
+            <tr>
+            <td>Boston Celtics</td>
+            <td>41</td>
+            </tr>
+            <tr>
+            <td>Dallas Mavericks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>Memphis Grizzlies</td>
+            <td>41</td>
+            </tr>
+            <tr>
+            <td>Atlanta Hawks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>New Orleans Pelicans</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>New York Knicks</td>
+            <td>40</td>
+            </tr>
+            <tr>
+            <td>San Antonio Spurs</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Miami Heat</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Charlotte Hornets</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Chicago Bulls</td>
+            <td>37</td>
+            </tr>
+            <tr>
+            <td>Portland Trail Blazers</td>
+            <td>35</td>
+            </tr>
+            <tr>
+            <td>Detroit Pistons</td>
+            <td>30</td>
+            </tr>
+            <tr>
+            <td>Washington Wizards</td>
+            <td>27</td>
+            </tr>
+            <tr>
+            <td>Sacramento Kings</td>
+            <td>26</td>
+            </tr>
+            <tr>
+            <td>Oklahoma City Thunder</td>
+            <td>26</td>
+            </tr>
+            <tr>
+            <td>Houston Rockets</td>
+            <td>25</td>
+            </tr>
+            <tr>
+            <td>Orlando Magic</td>
+            <td>20</td>
+            </tr>
+            <tr>
+            <td>Cleveland Cavaliers</td>
+            <td>20</td>
+            </tr>
+            <tr>
+            <td>Minnesota Timberwolves</td>
+            <td>19</td>
+            </tr>
+            </tbody></table>
+
+        <h1>Analysis</h1>
+        <p>Until the season concludes, we wont know for sure just how accurate we are; However, with near 1 R-Squared values we can trust this regression in a statistical manner to continue our predictions into the playoffs.</p>
+        <p>An Interesting perspective the regression shows is the change in standings from the halfway point in the season to the predicted finals.  The metrics used did infact show some teams may have been playing better than their win/loss numbers have so far shown, as well as the inverse.</p>
+        <div class='tableauPlaceholder' id='viz1615759210585' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;CurrenttoPredictedWins' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615759210585');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <p>We can see teams such as the Milwaukee Bucks who sit with 21 current wins, good enough for 7th overall currently, are predicted to finish with the second most wins by the end of the season along with the regular season Eastern Conference Title.</p>
+        <p>On the opposite end, the Portland Trailblazers with a respectable 18 wins, sitting 11th place overall, have been predicted to fall all the way to 20th in the overall standings with only 35 wins.</p>
+        <h2>Playoff Implications</h2>
+        <p>The top eight teams from each conference are awarded bids to the NBA playoffs, using our predictions we can create our predictive bracket and seed the teams based on record.  We go in-depth into the playoff predictions in the next section.</p>
+        <div class='tableauPlaceholder' id='viz1615758615039' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;HYQKYNZQ8' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615758615039');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div id="nextlink">
+            <a href="playoffs.html">Click Here for our Playoff Predictions</a>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div id="footerLink">
+        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+    </div>
+</footer>
+
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+</html>
