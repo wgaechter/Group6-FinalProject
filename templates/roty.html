@@ -11,10 +11,145 @@
     svg {
         margin: 5px;
     }
+
+    .header {
+        width: 100%;
+        height: 100%;
+    }
     
-    
+    #HeaderImage {
+        width: 100%;
+        height: 400px;
+        padding: 0px;
+    }
+
+    #ArticleContainer {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding: 30px;
+    }
+
+    #ArticleImage {
+        width: 100%;
+        padding-top: 2px;
+        padding-bottom: 20px;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    pre {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: inset;
+        border-color: #BF5700;
+        border-radius: 5px;
+        border-width: 5px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    h2 {
+        font-style: italic;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    dt {
+        font-style: italic;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    dd {
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tableauPlaceholder {
+        margin-bottom: 50px;
+    }
+
+    #nextlink {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    footer {
+        background-color: #36454f;
+        height: 100px;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    #footerLink {
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #homelink {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    #homelink:hover {
+        color: whitesmoke;
+        text-decoration: underline;
+    }
+
+    button {
+        text-align: center;
+        background-color: #36454f;
+        color: white;
+        width: 50%;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    #buttonDiv {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    #myDIV {
+        display: none;
+    }
 
 </style>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
 
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
@@ -56,29 +191,87 @@
         <img class=header src="../static/pics/2021_header.jpeg">
     </div>
     <div id="ArticleContainer" class=container>
-        <h1>Season Predictions</h1>
-        <p>Multiple Linear Regression</p>
+        <h1>Rookie of the Year Predictions</h1>
         <h2>Main Idea</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa. Libero volutpat sed cras ornare arcu dui. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu. Velit sed ullamcorper morbi tincidunt ornare massa. Id donec ultrices tincidunt arcu non sodales neque sodales ut. Sed faucibus turpis in eu mi bibendum neque egestas congue. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. In pellentesque massa placerat duis ultricies lacus. Massa sapien faucibus et molestie ac feugiat. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Dictum varius duis at consectetur lorem donec massa sapien.</p>
-        <h2>Training Data</h2>
-        <p>explain</p>
-        <img id="ArticleImage" src="../static/pics/SeasonPredictions/p-score.PNG">
-        <h2>etc</h2>
-        <p>TEST TEST TEST</p>
-        <pre>
-            <code class="language-python">
-                predictions = model.predict(X_21)
-                print(f"First 32 Predictions:   {predictions[:32]}")
-                print(f"First 32 Actual labels: {y_test[:32].tolist()}")
-            </code>
-        </pre>
+        <p>Using similar strategies to our MVP predictive model, we can also simulate and predict a potential top rookie for the 2021 season.  Using past rookie of the year caliber seasons we can train another regression model to output the likley 2021 NBA Rookie of the Year.</p>
+        <h2>Data</h2>
+        <p>Data was collected and complied from basketball-reference.com using their pre-filtered rookie statistics for our testing data as well as their past Rookie of the Year winning season statistics tables to train our models with.</p>
+        <p>compared to our MVP predictive model, this model used less metrics due to constraints in usable data for rookies compapared to MVPs.</p>
+        <p>Our list of used metrics are as follows:</p>
+        <dl>
+            <dt>- Minutes Per Game (MP)</dt>
+            <dd>Players average minutes played per game</dd>
+            <dt>- Points (PTS)</dt>
+            <dd>Players points scored on average per game</dd>
+            <dt>- Total Rebounds (TRB)</dt>
+            <dd>Players total rebounds (both offensive and defensive) on average per game</dd>
+            <dt>- Assists (AST)</dt>
+        </dl>
+        <p>These statistics were chosen to best represnet a potential rookie of the year, as including Minutes per Game helps determine potential impact to a team.</p>
+        <h2>Model</h2>
+        <p>Our model for the Rookie of the year is similar to our MVP model.</p>
+        <script src="https://gist.github.com/wgaechter/50f9cda6608c9336d0b37aac58b9d10f.js"></script>
+        <p>The major change from MVP to Rookie of the Year is our change in X values due to the data constraints.</p>
+        <p>As well as a binary prediction of ROY caliber, we include the percentage chance of winning the award outright</p>
+        <script src="https://gist.github.com/wgaechter/d08257435141624a0dc8d5986823f89e.js"></script>
+        <h3>R-Squared Score</h3>
+        <p>Our Rookie of the Year model was run through the SciKit scoring function.  The model when using split testing data received an R-Squared output of .9733.  While we expected a lower value due to the lower amount of different metrics, our score is still very close to a value of 1, showing a very high correlation.</p>
+        <h1>Results</h1>
+        <div id="buttonDiv">
+            <button onclick="myFunction()">Run Script</button>
+        </div>
+        <div id="myDIV">
+            <!--RESULTS/Analysis HERE-->
+            <p>Running 2021's rookie statistics from the halfway point in the season returns these predictions:</p>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead><tr><th title="Field #2">Player</th>
+                <th title="Field #3">prediction</th>
+                <th title="Field #4">ROY_prob</th>
+                </tr></thead>
+                <tbody><tr>
+                <td>LaMelo Ball\ballla01</td>
+                <td>1</td>
+                <td>83.45</td>
+                </tr>
+                <tr>
+                <td>Tyrese Haliburton\halibty01</td>
+                <td>1</td>
+                <td>53.91</td>
+                </tr>
+                <tr>
+                <td>Cole Anthony\anthoco01</td>
+                <td>0</td>
+                <td>31.52</td>
+                </tr>
+                <tr>
+                <td>Anthony Edwards\edwaran01</td>
+                <td>0</td>
+                <td>26.37</td>
+                </tr>
+                <tr>
+                <td>James Wiseman\wisemja01</td>
+                <td>0</td>
+                <td>20.37</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Analysis</h1>
+            <p>Our model, similarly to our MVP outputs, predicted two potential Rookie of the Year caliber seasons.  LaMelo Ball and Tyrese Haliburton both have produced numbers on track for an elite rookie season when compared to those beofre them.  Cole Anthony, Anthony Edwards, and James Wiseman all have produced a season with potential rookie of the year probabilities above 20%.  The next best rookie produced a sub 15% probability.</p>
+            <p>LaMelo Ball's season thus far has produced a predictive probability of 83.5%, a significantly higher probablity than Tyrese in second place with 54%.  Our model has predicted that LaMelo Ball has almost certainly locked himself into a Rookie of the Year award for the 2021 season.</p>
+            <p>In the future, having access to more robust rookie statistics, such as the metrics available for our MVP model, would greatley benefit our model with a much more accurate prediction.</p>
+        </div>
+        <div class='tableauPlaceholder' id='viz1615858330306' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;ROYPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;ROYPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;ROYPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615858330306');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div id="nextlink">
+            <a href="mvp.html">Click Here for our MVP predictions</a>
+        </div>
     </div>
 </body>
 
-
-<script src="../static/js/bootstrap.bundle.min.js"></script>
-
-</html>
+<footer>
+    <div id="footerLink">
+        <a id="homelink" href="../index.html">Click Here to return to the Dashboard</a>
+    </div>
+</footer>
 
 <script src="../static/js/bootstrap.bundle.min.js"></script>
 
