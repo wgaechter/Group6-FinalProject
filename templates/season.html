@@ -159,10 +159,10 @@
         <h1>2021 Season Predictions</h1>
         <p>Multiple Linear Regression</p>
         <h2>Main Idea</h2>
-        <p>Utilizing Multiple linear Regression models, we set out to attempt to predict the final outcome of the 2021 using current team statistics from the halfway point in the 2021 NBA Season.</p>
+        <p>Utilizing multiple linear regression models, we set out aiming to predict the final outcome of the 2021 using current team statistics from the halfway point in the 2021 NBA Season.</p>
         <h1>Data</h1>
         <h2>Source</h2>
-        <p>Data was collected from https://www.basketball-reference.com.  Using their "Team Ratings" tables we could use these metrics to help determine team skill and their impacts on win counts</p>
+        <p>Data was collected from https://www.basketball-reference.com.  Using their "Team Ratings" tables we could use these metrics to help determine team skill and their impacts on win counts.</p>
         <dl>
             <dt>Adjusted Margin of Victory (MOV/A)</dt>
             <dd>Average difference between team points scored and team points allowed, adjusted for strength of schedule</dd>
@@ -173,10 +173,10 @@
             <dt>Adjusted Net Rating (NRtg/A)</dt>
             <dd>A net aggregate of a teams ORtg/A and DRtg/A</dd>
         </dl>
-        <p>The adjusted metrics were used as we felt it better reflected a teams's true points value, and would help create a more accurate prediction based on a teams conference or division</p>
+        <p>The adjusted metrics were used as it was deemed a better reflection of a teams's true points value, and would help create a more accurate prediction based on a team's conference or division.</p>
         <img id="ArticleImage" src="../static/pics/SeasonPredictions/ratings.PNG">
         <h2>Training Data</h2>
-        <p>Data from the 2000 NBA season to the 2020 NBA season were collected and combined for model training.  Our process included using past seasons metric ratings and the corresponding wins to train the model to help accuratly predict wins from 2021's current metrics</p>
+        <p>Data from the 2000 NBA season to the 2020 NBA season was collected and combined for model training.  The process included using past seasons' metric ratings and the corresponding wins to train the model to help accurately predict wins from 2021's current metrics.</p>
         <!-- <pre>
             <code class="language-python">
                 X = data[["MOV/A", "ORtg/A", "DRtg/A", "NRtg/A"]]
@@ -184,11 +184,11 @@
             </code>
         </pre> -->
         <script src="https://gist.github.com/wgaechter/4fbd47cfc86dec2c113befdc2aa87d8a.js"></script>        <img id="ArticleImage" src="../static/pics/SeasonPredictions/ResidualPlot.png">
-        <p>Multiple Regression models allow us to track the linear path of multiple X values, in this case our four main ranking metrics provided by https://www.basketball-reference.com.  Our Y output would be trained by past seasons total wins, and would be the predictive variable when inputing 2021 data.</p>
+        <p>Multiple regression models allow us to track the linear path of multiple X values, in this case our four main ranking metrics provided by https://www.basketball-reference.com.  Our Y output would be trained by past seasons total wins, and would be the predictive variable when inputing 2021 data.</p>
         <p>Using Scikit-Learns' internal scoring methods, our training data returned a P-Value of .910 along with a testing score of .908.  These scores demonstrate a strong correlation between our metrics and wins.  This means our possible predictions should statisically be accurate.</p>
         
         <h1>Predictions</h1>
-        <p>Utilizing Scikits prediction tools, we could use our current 2021 Data and plug the information into our trained linear regression model to receive a predicted final standings for the 2021 season</p>
+        <p>Utilizing Scikits prediction tools, we could use the current 2021 data and plug the information into our trained linear regression model to receive a predicted final standings for the 2021 season</p>
         <!-- <pre>
             <code class="language-python">
                 predictions = model.predict(X_21)
@@ -204,7 +204,7 @@
             </code>
         </pre> -->
         <script src="https://gist.github.com/wgaechter/a69ec19262b591f1ad04ac4a82ca574f.js"></script>
-        <p>the raw predictions were listed and sorted into predictions_df, which was then formatted into a digestable table to see exactly how many wins were given to each team.</p>
+        <p>The raw predictions were listed and sorted into predictions_df, which was then formatted into a digestable table to see exactly how many wins were given to each team.</p>
         <table class="table table-bordered table-hover table-condensed">
             <tbody><tr>
             <td>Team</td>
@@ -333,13 +333,13 @@
             </tbody></table>
 
         <h1>Analysis</h1>
-        <p>Until the season concludes, we wont know for sure just how accurate we are; However, with near 1 R-Squared values we can trust this regression in a statistical manner to continue our predictions into the playoffs.</p>
-        <p>An Interesting perspective the regression shows is the change in standings from the halfway point in the season to the predicted finals.  The metrics used did infact show some teams may have been playing better than their win/loss numbers have so far shown, as well as the inverse.</p>
+        <p>Until the season concludes, we wont know for sure just how accurate we are; however, with near 1 R-Squared values we can trust this regression in a statistical manner to continue our predictions into the playoffs.</p>
+        <p>An interesting perspective, the regression shown is the change in standings from the halfway point in the season to the predicted finals.  The metrics used did infact show some teams may have been playing better than their win/loss numbers have so far shown, as well as the inverse.</p>
         <div class='tableauPlaceholder' id='viz1615759210585' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;CurrenttoPredictedWins' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;CurrenttoPredictedWins&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615759210585');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='950px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <p>We can see teams such as the Milwaukee Bucks who sit with 21 current wins, good enough for 7th overall currently, are predicted to finish with the second most wins by the end of the season along with the regular season Eastern Conference Title.</p>
         <p>On the opposite end, the Portland Trailblazers with a respectable 18 wins, sitting 11th place overall, have been predicted to fall all the way to 20th in the overall standings with only 35 wins.</p>
         <h2>Playoff Implications</h2>
-        <p>The top eight teams from each conference are awarded bids to the NBA playoffs, using our predictions we can create our predictive bracket and seed the teams based on record.  We go in-depth into the playoff predictions in the next section.</p>
+        <p>The top eight teams from each conference are awarded bids to the NBA playoffs, using these predictions we can create our predictive bracket and seed the teams based on record.  We go in-depth into the playoff predictions in the next section.</p>
         <div class='tableauPlaceholder' id='viz1615758615039' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;HYQKYNZQ8' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;HY&#47;HYQKYNZQ8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615758615039');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <div id="nextlink">
             <a href="playoffs.html">Click Here for our Playoff Predictions</a>
