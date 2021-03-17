@@ -117,7 +117,40 @@
         color: whitesmoke;
         text-decoration: underline;
     }
+
+    button {
+        text-align: center;
+        background-color: #36454f;
+        color: white;
+        width: 50%;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    #buttonDiv {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    #myDIV {
+        display: none;
+    }
+
 </style>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
 
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
@@ -156,7 +189,7 @@
 
 <body>
     <div id=HeaderImage class=container-fluid>
-        <img class=header src="../static/pics/2021_header.jpeg">
+        <img class=header src="../static/pics/MVPpics/mvpheader.png">
     </div>
     <div id="ArticleContainer" class=container>
         <h1>MVP Predictions</h1>
@@ -192,46 +225,51 @@
         <script src="https://gist.github.com/wgaechter/f7228f5a46aeac28e20c402f3bcbd241.js"></script>
         <p>Above is modeling the predicted probability of a player winning the MVP from our 2021 season statistics.  Not only will this model predict a binary outcome of a MVP caliber season, but we can see the actual likelihood of the trophy being awarded to an individual.</p>
         <h3>R-Squared Score</h3>
-        <p>Using SciKit's own R-Squared scoring tools, the tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
-        <h1>Results</h1> <!--Results Button-->
+        <p>Using SciKit's own R-Squared scoring tools, our tests with the training data resulted with a R-Squared value of .9943.  This value demonstrates our model and data have a nearly direct correlation, and our prediction should be statisically accurate.</p>
+        <h1>Results</h1>
         <h2>Inputing 2021 Data</h2>
-        <p>As we input the 2021 season statistics from the halfway point in the season along with the past data that trained our model, we can accurately predict the potential MVP.</p>
-        <table class="table table-bordered table-hover table-condensed">
-            <thead><tr><th title="Field #2">Player</th>
-            <th title="Field #3">prediction</th>
-            <th title="Field #4">mvp prob</th>
-            </tr></thead>
-            <tbody><tr>
-            <td>Giannis Antetokounmpo\antetgi01</td>
-            <td>1</td>
-            <td>61.23</td>
-            </tr>
-            <tr>
-            <td>Nikola Jokić\jokicni01</td>
-            <td>1</td>
-            <td>51.92</td>
-            </tr>
-            <tr>
-            <td>Luka Dončić\doncilu01</td>
-            <td>0</td>
-            <td>44.74</td>
-            </tr>
-            <tr>
-            <td>James Harden\hardeja01</td>
-            <td>0</td>
-            <td>36.58</td>
-            </tr>
-            <tr>
-            <td>Joel Embiid\embiijo01</td>
-            <td>0</td>
-            <td>35.47</td>
-            </tr>
-            </tbody>
-        </table>
-        <div class='tableauPlaceholder' id='viz1615853628877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;MVPPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615853628877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div id="buttonDiv">
+            <button onclick="myFunction()">Show Results</button>
+        </div>
+        <div id="myDIV">
+            <p>As we input the 2021 season statistics from the halfway point in the season, we recieve our predictions for the potential MVP at the end of the season.  Using our metrics as well as out past data that trained our model, we can accurately guess the potential MVP</p>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead><tr><th title="Field #2">Player</th>
+                <th title="Field #3">prediction</th>
+                <th title="Field #4">mvp prob</th>
+                </tr></thead>
+                <tbody><tr>
+                <td>Giannis Antetokounmpo\antetgi01</td>
+                <td>1</td>
+                <td>61.23</td>
+                </tr>
+                <tr>
+                <td>Nikola Jokić\jokicni01</td>
+                <td>1</td>
+                <td>51.92</td>
+                </tr>
+                <tr>
+                <td>Luka Dončić\doncilu01</td>
+                <td>0</td>
+                <td>44.74</td>
+                </tr>
+                <tr>
+                <td>James Harden\hardeja01</td>
+                <td>0</td>
+                <td>36.58</td>
+                </tr>
+                <tr>
+                <td>Joel Embiid\embiijo01</td>
+                <td>0</td>
+                <td>35.47</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <h1>Analysis</h1>
-        <p>Based on the metrics so far in the 2021 season, the prediction output gave two potential players on track for an MVP caliber season: Giannis Antetokounmpo and Nikola Jokić. Our percentage based predictive model also identified multiple other potential candidates; however, these players are predicted to fall short of a elite level season.  These players include NBA all-stars such as Luka Dončić, James Harden, Joel Embiid, and Ben Simmons.</p>
-        <p>For future predictive projects, as well as continuing this project, it would have been beneficial and intriguing to include additional metrics and statistics.  For these advanced statistics, such as defensive ratings, team success, on court plus/minus ratings, and multiple additional statistics we either did not have access to or time to compile.</p>
+        <p>Our prediction output gave us two potential players on track for an MVP caliber season.  Giannis Antetokounmpo and Nikola Jokić, based on our metrics so far through the 2021 season, are predicted to continue the pace into MVP discussion.  Our percentage based predictive model also identified multiple other potential candidates; However, these players are predicted to fall short of a elite level season.  These players include NBA all-stars such as Luka Dončić, James Harden, Joel Embiid, and Ben Simmons.</p>
+        <div class='tableauPlaceholder' id='viz1615853628877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='JenniferProject3&#47;MVPPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Je&#47;JenniferProject3&#47;MVPPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615853628877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <p>For future predictive projects, as well as continuing this project, it would have been beneficial and intriguing to include additional metrics and stats.  Advanced statistics such as defensive ratings, team success, on court plus/minus ratings, and multiple additional statistics we did not either have access to or time to complile.</p>
         <div id="nextlink">
             <a href="roty.html">Click Here for our Rookie of the Year Predictions</a>
         </div>
