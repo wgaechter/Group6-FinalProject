@@ -9,4 +9,8 @@ For predicting MVP and ROY, we took the same approach we did for predicting play
 
 Check out our github pages and Tableau Public Story for our graphics and more analysis. 
 
+https://wgaechter.github.io/Group6-FinalProject/index.html
+
 https://public.tableau.com/profile/jennifer.powell8088#!/vizhome/JenniferProject3/PredictingNBAStatisticsforthe2020-21Season?publish=yes
+
+
